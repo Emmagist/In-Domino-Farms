@@ -298,7 +298,8 @@
                 </div>
                 <div class="form-group">
                     <img src="../'.$key['product_image'].'" alt="'.$key['product'].'" style="width:400px;height:400px;border-radius:10px;" />
-                    <input type="file" id="upload_image" title="Edit Image" class="form-control" name="upload_image">
+                    <input id="uploadFile"  class="form-control" name="fileUpload"  type="file">
+                    <input type="hidden" id="upload_image" value="'.$key['product_image'].'" title="Edit Image" name="current_file">
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
@@ -312,4 +313,207 @@
         echo json_encode($outPut);
     }
 
-?>
+    //Index product list
+    if ($get == 209) {
+        $outPut = '';
+        if (Ajax::getFrontProductRoundom()) {
+            foreach (Ajax::getFrontProductRoundom() as $key) {
+                $outPut .= '
+                <li class="product">
+                <div class="product-contents">
+                    <div class="product-image">
+                        <a href="product-details?pr='.$key['entity_guid'].'">
+                            <img src="'.$key['product_image'].'" alt="Product">
+                        </a>
+                        <div class="shop-action">
+                            <ul>
+                                <li class="cart">
+                                    <a onClick="cartModal()"><span>Add to cart</span></a>
+                                </li>
+                                <li class="wishlist">
+                                    <a href="#"><span>Add to wishlist</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product-caption">
+                        <div class="product-tags">
+                            <a href="#">Shop</a>
+                            <a href="#">Organic</a>
+                        </div>
+                        <h4 class="product-title">
+                            <a href="product-details?pr='.$key['entity_guid'].'">'.$key['product'].'</a>
+                        </h4>
+                        <div class="review-count">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>8 Review</span>
+                    </div>
+                        <div class="price">
+                            <span>&#8358;'.$key['price'].'</span>
+                        </div>
+                    </div>
+                </div>
+            </li>';
+            }
+        }
+
+        echo json_encode($outPut);
+
+    }
+
+    //Shop product list
+    if ($get == 210) {
+        $outPut = '';
+        if (Ajax::getAllProductRoundom()) {
+            foreach (Ajax::getAllProductRoundom() as $key) {
+                $outPut .= '
+                <li class="product">
+                <div class="product-contents">
+                    <div class="product-image">
+                        <a href="product-details?pr='.$key['entity_guid'].'">
+                            <img src="'.$key['product_image'].'" alt="Product">
+                        </a>
+                        <div class="shop-action">
+                            <ul>
+                                <li class="cart">
+                                    <a class="my-cart-btn sc-add-to-cart"  data-id="'.$key['id'].'" data-name="'.$key['product'].'" data-summary="'.$key['short_description'].'" data-price="'.$key['price'].'" data-quantity="1" data-image="'.$key['product_image'].'"  onClick="cartModal()"><span>Add to cart</span></a>
+                                </li>
+                                <li class="wishlist">
+                                    <a href="#"><span>Add to wishlist</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product-caption">
+                        <div class="product-tags">
+                            <a href="#">Shop</a>
+                            <a href="#">Organic</a>
+                        </div>
+                        <h4 class="product-title">
+                            <a href="product-details?pr='.$key['entity_guid'].'">'.$key['product'].'</a>
+                        </h4>
+                        <div class="review-count">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>8 Review</span>
+                    </div>
+                        <div class="price">
+                            <span>&#8358;'.$key['price'].'</span>
+                        </div>
+                    </div>
+                </div>
+            </li>';
+            }
+        }
+
+        echo json_encode($outPut);
+
+    }
+
+    //Related product list
+    if ($get == 211) {
+        $id = $_GET['cat'];
+        $outPut = ''; 
+        if (Ajax::getRelatedProductRoundom($id)) {
+            foreach (Ajax::getRelatedProductRoundom($id) as $key) {
+                $outPut .= '
+                    <div class="swiper-slide">
+                        <div class="product">
+                            <div class="product-contents">
+                                <div class="product-image">
+                                    <a href="product-details?pr='.$key['entity_guid'].'">
+                                        <img src="'.$key['product_image'].'" alt="'.$key['product'].'">
+                                    </a>
+                                    <div class="shop-action">
+                                        <ul>
+                                            <li class="cart">
+                                                <a  onClick="cartModal()"><span>Add to cart</span></a>
+                                            </li>
+                                            <li class="wishlist">
+                                                <a href="#"><span>Add to wishlist</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="product-caption">
+                                    <div class="product-tags">
+                                        <a href="#">Crop</a>
+                                        <a href="#">Organic</a>
+                                    </div>
+                                    <h4 class="product-title">
+                                        <a href="product-details?pr='.$key['entity_guid'].'">'.$key['product'].'</a>
+                                    </h4>
+                                    <div class="review-count">
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <span>8 Review</span>
+                                    </div>
+                                    <div class="price">
+                                        <span>&#8358;'.$key['price'].'</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>';
+            }
+        }
+
+        echo json_encode($outPut);
+
+    }
+
+    //Cart list
+    if ($get == 212) {
+        $outPut = '';
+        if (Ajax::fetchCart($_GET['token'])) {
+            foreach (Ajax::fetchCart($_GET['token']) as $key) {
+                $outPut .= '
+                
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+                        <i class="far fa-shopping-cart my-cart-icon"></i>
+                        <span class="badge my-cart-badge">'. $key['id']?count($key['id']):"0" .'</span>
+                    </a>
+                    <ul class="dropdown-menu cart-list">
+                        <li>
+                            <div class="thumb">
+                                <a href="#" class="photo">
+                                    <img src="'. $key['product_image'] .'" alt="Thumb">
+                                </a>
+                                <a href="#" class="remove-product">
+                                    <i class="fas fa-times"></i>
+                                </a>
+                            </div>
+                            <div class="info">
+                                <h6><a href="#">'. $key['product'] .' </a></h6>
+                                <p>2x - <span class="price">'. $key['price'] .'</span></p>
+                            </div>
+                        </li>
+                        <li class="total">
+                            <span class="pull-right"><strong>Total</strong>: $'. $key['total'] .'</span>
+                            <a href="#" class="btn btn-default btn-cart">Cart</a>
+                            <a href="#" class="btn btn-default btn-cart">Checkout</a>
+                        </li>
+                    </ul>
+                ';
+            }
+        }
+
+        echo json_encode($outPut);
+
+    }

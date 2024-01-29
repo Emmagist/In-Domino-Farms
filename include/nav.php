@@ -72,12 +72,12 @@
                     <!-- Start Atribute Navigation -->
                     <div class="attr-nav">
                         <ul>
-                            <li class="dropdown">
+                            <li class="dropdown  cartListDropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
-                                    <i class="far fa-shopping-cart"></i>
-                                    <span class="badge">3</span>
+                                    <i class="far fa-shopping-cart my-cart-icon"></i>
+                                    <span class="badge my-cart-badge">3</span>
                                 </a>
-                                <ul class="dropdown-menu cart-list">
+                                <ul class="dropdown-menu cart-list cartList">
                                     <li>
                                         <div class="thumb">
                                             <a href="#" class="photo">

@@ -33,7 +33,11 @@
                     <div class="contact-form-style-one">
                         <h5 class="sub-title">Have Questions?</h5>
                         <h2 class="heading">Send us a Massage</h2>
-                        <form action="assets/mail/contact.php" method="POST" class="contact-form contact-form">
+                        <form action="" method="POST" class="contact-form">
+                            <div class="form-group">
+                                <li class="alert alert-success list-unstyled productSuccess text-center" style="display:none;"></li>
+                                <li class="alert alert-danger list-unstyled productError text-center" style="display:none;"></li>
+                            </div>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
@@ -65,7 +69,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <button type="submit" name="submit" id="submit">
+                                    <button type="submit">
                                         <i class="fa fa-paper-plane"></i> Get in Touch
                                     </button>
                                 </div>
@@ -131,4 +135,40 @@
 
     <!-- Start Footer 
     ============================================= -->
-<?php require "include/footer.php";
+<?php require "include/footer.php"; ?>
+
+<script>
+//Contact us
+$('.contact-form').submit(function (e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+
+  $.ajax({
+      url: 'libs/fetchAjax.php?pg=205',
+      method: 'POST',
+      dataType: 'json',
+      data: formData,
+      contentType: false,
+      processData: false,
+      // cache: false,
+      success: (param) => { 
+          if (param.success) {
+              
+              $('.productSuccess').fadeIn()
+              $('.productSuccess').text(param.success);
+              setInterval(() => {
+                  $('.productSuccess').fadeOut();
+                  location.reload();
+              }, 6000);
+          }else if(param.error){
+              $('.productError').fadeIn()
+              $('.productError').text(param.error);
+              setInterval(() => {
+                  $('.productError').fadeOut();
+              }, 6000);
+          }
+      },
+  });
+  return false;
+});
+</script>

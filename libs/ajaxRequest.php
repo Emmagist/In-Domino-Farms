@@ -3,6 +3,7 @@
     require_once "../config/mailer.php";
     // require_once "../emailVerification.php";
     // require_once "../phpMailer.php";
+    // require_once "../config/db.php";
 
     class Ajax
     {
@@ -79,113 +80,69 @@
             return $db->selectData(TBL_PRODUCT, "*", "id = '$id'");
         }
 
-        public static function getAdminByUsernameOrEmail($email)
+        public static function getAdminEmail($email)
+        {
+            global $db;
+            return $db->selectData(TBL_ADMIN, "*", "email = '$email'");
+        }
+
+        public static function getUserEmail($email)
         {
             global $db;
             return $db->selectData(TBL_USERS, "*", "email = '$email'");
         }
 
-        public static function getInvestorByUsernameOrEmail($email)
+        public static function getUserPhone($phone)
         {
             global $db;
-            return $db->selectData(TBL_SYSTEM_USER, "*", "email = '$email' OR username = '$email'");
+            return $db->selectData(TBL_USERS, "*", "phone_number = '$phone'");
+        }
+
+        public static function getFrontProductRoundom(){
+            global $db;
+            return $db->selectRandLimit(TBL_PRODUCT, "*", "", "8");
+        }
+
+        public static function getAllProductRoundom(){
+            global $db;
+            return $db->selectRandLimit(TBL_PRODUCT, "*", "", "32");
+        }
+
+        public static function getRelatedProductRoundom($id){
+            global $db;
+            return $db->selectRandLimit(TBL_PRODUCT, "*", "category_id='$id'", "30");
+        }
+
+        public static function fetchCart($token){
+            global $db;
+
+            $rows = [];
+
+            $results = $db->query("SELECT * FROM " . TBL_CART . "
+                INNER JOIN " . TBL_USERS . " 
+                ON " . TBL_CART . ".user_id = " . TBL_USERS . ".user_guid
+                INNER JOIN " . TBL_PRODUCT . " 
+                ON " . TBL_CART . ".product_id = " . TBL_PRODUCT . ".entity_guid  
+                WHERE " . TBL_CART . ".user_id = '$token' ORDER BY updated_at ASC
+                
+            ");
+
+            if (!empty($results)) {
+
+                return $rows;
+            }
         }
 
         public static function getUserByEmail($email)
         {
             global $db;
-            return $db->selectData(TBL_SYSTEM_USER, "*", "email = '$email'");
-        }
-
-        public static function checkUserIfVerified($email)
-        {
-            global $db;
-            $verify = $db->selectData(TBL_SYSTEM_USER, "*", "email = '$email' AND email_verify = 'unverified'");
-
-            if ($verify) {
-                return true;
-            } else {
-                return false;
-            }
+            return $db->selectData(TBL_USERS, "*", "email = '$email'");
         }
 
         public static function findUserByToken($token)
         {
             global $db;
-            return $db->selectData(TBL_SYSTEM_USER, "*", "user_guid = '$token'");
-        }
-
-        public static function getUsername($username)
-        {
-            global $db;
-            return $db->selectData(TBL_SYSTEM_USER, "*", "username = '$username'");
-        }
-
-        public static function getAdminUsername($username)
-        {
-            global $db;
-            return $db->selectData(TBL_ADMIN, "*", "username = '$username'");
-        }
-
-        public static function getPassword($password)
-        {
-            global $db;
-            return $db->selectData(TBL_SYSTEM_USER, "*", "password = '$password'");
-        }
-
-        public static function verifySignupCode($verify)
-        {
-            global $db;
-            $codes = $db->selectData(TBL_REGISTRATION_CODE, "*", "code = '$verify'");
-
-            if (isset($codes)) {
-                foreach ($codes as $code) {
-                    $user = $code['user_guid'];
-                    $result = $db->update(TBL_SYSTEM_USER, "email_verify = 'verified'", "user_guid = '$user'");
-                    if ($result) {
-                        return true;
-                    }
-                }
-            } else {
-                return false;
-            }
-        }
-
-        public static function getSingleChat($ticket)
-        {
-            global $db;
-
-            $rows = [];
-            $result = $db->query("SELECT * FROM " . TBL_TRADERS_CHAT . "
-                    INNER JOIN " . TICKET . " 
-                    ON " . TICKET . ".token_guid = " . TBL_TRADERS_CHAT . ".ticket_id 
-                    WHERE " . TBL_TRADERS_CHAT . ".ticket_id = '$ticket' ORDER BY maker DESC
-                ");
-            if (!empty($result)) {
-                while ($row = $result->fetch_assoc()) {
-                    $rows[] = $row;
-                }
-                return $rows;
-            }
-        }
-
-        public static function getMessageList($token)
-        {
-            global $db;
-
-            $rows = [];
-            $result = $db->query("SELECT * FROM " . TICKET . "
-                    INNER JOIN " . TBL_SYSTEM_USER . " 
-                    ON " . TICKET . ".maker = " . TBL_SYSTEM_USER . ".user_guid 
-                    WHERE " . TICKET . ".receiver = '$token' OR maker = '$token' ORDER BY updated_at DESC
-                ");
-
-            if (!empty($result)) {
-                while ($row = $result->fetch_assoc()) {
-                    $rows[] = $row;
-                }
-                return $rows;
-            }
+            return $db->selectData(TBL_USERS, "*", "user_guid = '$token'");
         }
 
         public static function getSenderMessageList($token)

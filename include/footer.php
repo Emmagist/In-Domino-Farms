@@ -109,6 +109,8 @@
         </div>
     </footer>
     <!-- End Footer -->
+
+    <?php require "modal/modal.php"?>
     
     <!-- jQuery Frameworks
     ============================================= -->
@@ -132,6 +134,66 @@
     <script src="assets/js/loopcounter.js"></script>
     <script src="assets/js/validnavs.js"></script>
     <script src="assets/js/main.js"></script>
+    <!-- <script src="assets/js/jQuery.SimpleCart.js"></script> -->
+    <!-- <script src="assets/js/jquery.mycart.js"></script>
+    <script src="assets/js/shopping-cart.js"></script> -->
+
+    <script>
+        function cartModal() {
+            $('#exampleModal').modal('show');
+        }
+
+        $( document ).ready(function() {
+            $.ajax({
+                url: 'libs/ajaxGet.php?get=212&token='+id,
+                method: 'GET',
+                dataType: 'json',
+                data: 200,
+                contentType: false,
+                processData: false,
+                // cache: false,
+                success: (param) => { 
+                    if (param) {
+                        $('.cartListDropdown').html(param);
+                    }
+                },
+            });
+            return false;
+        });
+
+        $('.modalForm').submit(function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+
+            $.ajax({
+                url: 'libs/fetchAjax.php?pg=206',
+                method: 'POST',
+                dataType: 'json',
+                data: formData,
+                contentType: false,
+                processData: false,
+                // cache: false,
+                success: (param) => { 
+                    if (param.success) {
+                        
+                        $('.modalSuccess').fadeIn()
+                        $('.modalSuccess').text(param.success);
+                        setInterval(() => {
+                            $('.modalSuccess').fadeOut();
+                            location.reload();
+                        }, 6000);
+                    }else if(param.error){
+                        $('.modalError').fadeIn()
+                        $('.modalError').text(param.error);
+                        setInterval(() => {
+                            $('.modalError').fadeOut();
+                        }, 6000);
+                    }
+                },
+            });
+            return false;
+        });
+    </script>
     
 
 </body>

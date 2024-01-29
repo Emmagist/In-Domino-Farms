@@ -69,7 +69,7 @@
                                 <li class="product">
                                     <div class="product-contents">
                                         <div class="product-image">
-                                            <a href="shop-single.html">
+                                            <a href="product-details">
                                                 <img src="assets/img/products/1.png" alt="Product">
                                             </a>
                                             <div class="shop-action">
@@ -89,9 +89,9 @@
                                                 <a href="#">Organic</a>
                                             </div>
                                             <h4 class="product-title">
-                                                <a href="shop-single.html">Strawberry</a>
+                                                <a href="product-details">Strawberry</a>
                                             </h4>
-                                            <div class="review-count">
+                                            <!-- <div class="review-count">
                                                 <div class="rating">
                                                     <i class="fas fa-star"></i>
                                                     <i class="fas fa-star"></i>
@@ -100,7 +100,7 @@
                                                     <i class="fas fa-star-half-alt"></i>
                                                 </div>
                                                 <span>8 Review</span>
-                                            </div>
+                                            </div> -->
                                             <div class="price">
                                                 <span>$12.00</span>
                                             </div>
@@ -134,4 +134,24 @@
     </div>
     <!-- End Shop -->
 
-<?php require "include/footer.php";
+<?php require "include/footer.php";?>
+
+<script>
+    $( document ).ready(function() {
+      $.ajax({
+          url: 'libs/ajaxGet.php?get=210',
+          method: 'GET',
+          dataType: 'json',
+          data: 200,
+          contentType: false,
+          processData: false,
+          // cache: false,
+          success: (param) => { 
+              if (param) {
+                  $('.vt-products').html(param);
+              }
+          },
+      });
+      return false;
+    });
+</script>

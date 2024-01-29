@@ -1,5 +1,5 @@
 <?php
-
+    
     require "include/head.php";
     require "include/nav.php";
 
@@ -213,7 +213,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <ul class="vt-products text-center columns-4">
+                <ul class="vt-products text-center columns-4 productList">
 
                     <!-- Single product -->
                     <li class="product">
@@ -235,13 +235,13 @@
                             </div>
                             <div class="product-caption">
                                 <div class="product-tags">
-                                    <a href="#">Crop</a>
+                                    <!-- <a href="#">Crop</a> -->
                                     <a href="#">Organic</a>
                                 </div>
                                 <h4 class="product-title">
                                     <a href="shop-single.html">Strawberry</a>
                                 </h4>
-                                <div class="review-count">
+                                <!-- <div class="review-count">
                                     <div class="rating">
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
@@ -250,320 +250,9 @@
                                         <i class="fas fa-star-half-alt"></i>
                                     </div>
                                     <span>8 Review</span>
-                                </div>
+                                </div> -->
                                 <div class="price">
                                     <span>$12.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Single product -->
-
-                    <!-- Single product -->
-                    <li class="product">
-                        <div class="product-contents">
-                            <div class="product-image">
-                                <span class="onsale">Sale!</span>
-                                <a href="shop-single.html">
-                                    <img src="assets/img/products/2.png" alt="Product">
-                                </a>
-                                <div class="shop-action">
-                                    <ul>
-                                        <li class="cart">
-                                            <a href="#"><span>Add to cart</span></a>
-                                        </li>
-                                        <li class="wishlist">
-                                            <a href="#"><span>Add to wishlist</span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-tags">
-                                    <a href="#">Vegetables</a>
-                                    <a href="#">Winter</a>
-                                </div>
-                                <h4 class="product-title">
-                                    <a href="shop-single.html">Organic Carrot</a>
-                                </h4>
-                                <div class="review-count">
-                                    <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                    <span>8 Review</span>
-                                </div>
-                                <div class="price">
-                                    <span><del>$8.00</del></span>
-                                    <span>$5.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Single product -->
-
-                    <!-- Single product -->
-                    <li class="product">
-                        <div class="product-contents">
-                            <div class="product-image">
-                                <a href="shop-single.html">
-                                    <img src="assets/img/products/3.png" alt="Product">
-                                </a>
-                                <div class="shop-action">
-                                    <ul>
-                                        <li class="cart">
-                                            <a href="#"><span>Add to cart</span></a>
-                                        </li>
-                                        <li class="wishlist">
-                                            <a href="#"><span>Add to wishlist</span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-tags">
-                                    <a href="#">Fruits</a>
-                                    <a href="#">Juicy</a>
-                                </div>
-                                <h4 class="product-title">
-                                    <a href="shop-single.html">Fresh Red Seedless</a>
-                                </h4>
-                                <div class="review-count">
-                                    <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                    <span>8 Review</span>
-                                </div>
-                                <div class="price">
-                                    <span>$14.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Single product -->
-
-                    <!-- Single product -->
-                    <li class="product">
-                        <div class="product-contents">
-                            <div class="product-image">
-                                <a href="shop-single.html">
-                                    <img src="assets/img/products/4.png" alt="Product">
-                                </a>
-                                <div class="shop-action">
-                                    <ul>
-                                        <li class="cart">
-                                            <a href="#"><span>Add to cart</span></a>
-                                        </li>
-                                        <li class="wishlist">
-                                            <a href="#"><span>Add to wishlist</span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-tags">
-                                    <a href="#">Fruits</a>
-                                    <a href="#">Juicy</a>
-                                </div>
-                                <h4 class="product-title">
-                                    <a href="shop-single.html">Organic Sweet Corn</a>
-                                </h4>
-                                <div class="review-count">
-                                    <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                    <span>8 Review</span>
-                                </div>
-                                <div class="price">
-                                    <span>$8.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Single product -->
-
-                    <!-- Single product -->
-                    <li class="product">
-                        <div class="product-contents">
-                            <div class="product-image">
-                                <a href="shop-single.html">
-                                    <img src="assets/img/products/5.png" alt="Product">
-                                </a>
-                                <div class="shop-action">
-                                    <ul>
-                                        <li class="cart">
-                                            <a href="#"><span>Add to cart</span></a>
-                                        </li>
-                                        <li class="wishlist">
-                                            <a href="#"><span>Add to wishlist</span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-tags">
-                                    <a href="#">Fish</a>
-                                    <a href="#">Health</a>
-                                </div>
-                                <h4 class="product-title">
-                                    <a href="shop-single.html">Fresh Fish</a>
-                                </h4>
-                                <div class="review-count">
-                                    <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                    <span>8 Review</span>
-                                </div>
-                                <div class="price">
-                                    <span>$25.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Single product -->
-
-                    <!-- Single product -->
-                    <li class="product">
-                        <div class="product-contents">
-                            <div class="product-image">
-                                <a href="shop-single.html">
-                                    <img src="assets/img/products/6.png" alt="Product">
-                                </a>
-                                <div class="shop-action">
-                                    <ul>
-                                        <li class="cart">
-                                            <a href="#"><span>Add to cart</span></a>
-                                        </li>
-                                        <li class="wishlist">
-                                            <a href="#"><span>Add to wishlist</span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-tags">
-                                    <a href="#">Seasonal</a>
-                                    <a href="#">Fruit</a>
-                                </div>
-                                <h4 class="product-title">
-                                    <a href="shop-single.html">Fresh Bananah</a>
-                                </h4>
-                                <div class="review-count">
-                                    <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                    <span>8 Review</span>
-                                </div>
-                                <div class="price">
-                                    <span><del>$18.00</del></span>
-                                    <span>$13.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Single product -->
-
-                    <!-- Single product -->
-                    <li class="product">
-                        <div class="product-contents">
-                            <div class="product-image">
-                                <a href="shop-single.html">
-                                    <img src="assets/img/products/7.png" alt="Product">
-                                </a>
-                                <div class="shop-action">
-                                    <ul>
-                                        <li class="cart">
-                                            <a href="#"><span>Add to cart</span></a>
-                                        </li>
-                                        <li class="wishlist">
-                                            <a href="#"><span>Add to wishlist</span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-tags">
-                                    <a href="#">Seasonal</a>
-                                    <a href="#">Vegetables</a>
-                                </div>
-                                <h4 class="product-title">
-                                    <a href="shop-single.html">Organic Cucumber</a>
-                                </h4>
-                                <div class="review-count">
-                                    <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                    <span>8 Review</span>
-                                </div>
-                                <div class="price">
-                                    <span>$3.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- Single product -->
-
-                    <!-- Single product -->
-                    <li class="product">
-                        <div class="product-contents">
-                            <div class="product-image">
-                                <a href="shop-single.html">
-                                    <img src="assets/img/products/8.png" alt="Product">
-                                </a>
-                                <div class="shop-action">
-                                    <ul>
-                                        <li class="cart">
-                                            <a href="#"><span>Add to cart</span></a>
-                                        </li>
-                                        <li class="wishlist">
-                                            <a href="#"><span>Add to wishlist</span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="product-caption">
-                                <div class="product-tags">
-                                    <a href="#">Vegetables</a>
-                                    <a href="#">Fruit</a>
-                                </div>
-                                <h4 class="product-title">
-                                    <a href="shop-single.html">Green Avocado</a>
-                                </h4>
-                                <div class="review-count">
-                                    <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                    <span>8 Review</span>
-                                </div>
-                                <div class="price">
-                                    <span>$6.00</span>
                                 </div>
                             </div>
                         </div>
@@ -674,7 +363,11 @@
                     <div class="contact-form-style-one mb-md-50">
                         <h5 class="sub-title">Have Questions?</h5>
                         <h2 class="heading">Send us a Massage</h2>
-                        <form action="assets/mail/contact.php" method="POST" class="contact-form contact-form">
+                        <form action="" method="POST" class="contact-form">
+                            <div class="form-group">
+                                <li class="alert alert-success list-unstyled productSuccess text-center" style="display:none;"></li>
+                                <li class="alert alert-danger list-unstyled productError text-center" style="display:none;"></li>
+                            </div>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
@@ -758,7 +451,7 @@
                                 </div>
                                 <div class="info">
                                     <h5 class="title">Official Email</h5>
-                                    <a href="mailto:info@agrul.com.com">info@agrul.com</a>
+                                    <a href="mailto:indominoltd@gmail.com">indominoltd@gmail.com</a>
                                 </div>
                             </li>
                         </ul>
@@ -770,4 +463,60 @@
     </div>
     <!-- End Contact -->
 
- <?php require "include/footer.php";  
+ <?php require "include/footer.php"; ?>
+
+ <script>
+    $( document ).ready(function() {
+      $.ajax({
+          url: 'libs/ajaxGet.php?get=209',
+          method: 'GET',
+          dataType: 'json',
+          data: 200,
+          contentType: false,
+          processData: false,
+          // cache: false,
+          success: (param) => { 
+              if (param) {
+                  $('.productList').html(param);
+              }
+          },
+      });
+      return false;
+  });
+
+  //Contact us
+  $('.contact-form').submit(function (e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+
+    $.ajax({
+        url: 'libs/fetchAjax.php?pg=205',
+        method: 'POST',
+        dataType: 'json',
+        data: formData,
+        contentType: false,
+        processData: false,
+        // cache: false,
+        success: (param) => { 
+            if (param.success) {
+                
+                $('.productSuccess').fadeIn()
+                $('.productSuccess').text(param.success);
+                setInterval(() => {
+                    $('.productSuccess').fadeOut();
+                    location.reload();
+                }, 6000);
+            }else if(param.error){
+                $('.productError').fadeIn()
+                $('.productError').text(param.error);
+                setInterval(() => {
+                    $('.productError').fadeOut();
+                }, 6000);
+            }
+        },
+    });
+    return false;
+  });
+
+  
+ </script>

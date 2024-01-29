@@ -1,6 +1,6 @@
 <?php
 
-use Egulias\EmailValidator\EmailValidator;
+// use Egulias\EmailValidator\EmailValidator;
 
 require_once "ajaxRequest.php";
 
@@ -131,11 +131,13 @@ if ($pg == 202) {
     echo json_encode(['error' => $error, 'success' => $success]);
 }
 
+// Admin register
 if ($pg == 203) {
     $error = "";
     $success = "";
     $full_name = $db->escape($_POST['full_name']);
     $email = $db->escape($_POST['email']);
+    $password = $db->escape($_POST['password']);
 
     if (empty($full_name)) {
         $error = "Full Name is required!";
@@ -145,17 +147,21 @@ if ($pg == 203) {
         $error = "Email is required!";
     }
 
+    if (empty($password)) {
+        $error = "Password is required!";
+    }
+
     if ($db->validateEmail($email) == false) {
         $error = "Invalid email address";
     }
 
-    if (Ajax::getAdminByUsernameOrEmail($email)) {
+    if (Ajax::getAdminEmail($email)) {
         $error = "Email already exist!";
     }
 
-    if (empty($errors)) {
+    if (empty($error)) {
 
-        $password = DataBase::autoGenPass();
+        // $password = DataBase::autoGenPass();
 
         $hash_password = password_hash($password, PASSWORD_DEFAULT);
 
@@ -164,11 +170,11 @@ if ($pg == 203) {
         $result = $db->saveData(TBL_ADMIN, "user_guid = '$user_guid', role_id = '1', full_name = '$full_name', email = '$email', password = '$hash_password'");
 
         if ($result) {
-            $mailer = Mailer::sendAdminSignupDetails($email, $password);
+            // $mailer = Mailer::sendAdminSignupDetails($email, $password);
 
-            if ($mailer) {
+            // if ($mailer) {
                 $success ="Registration Successful";
-            }
+            // }
             
         }
     }else{
@@ -191,6 +197,7 @@ if ($pg == 204) {
     $weight = $db->escape($_POST['weight']);
     $short_description = $db->escape($_POST['short_description']);
     $description = $db->escape($_POST['description']);
+    $current_image = $db->escape($_POST['current_file']);
 
     if(empty($product)){
         $error = 'Product name can not be empty!';
@@ -216,75 +223,143 @@ if ($pg == 204) {
         $error = 'Description can not be empty!';
     }
 
-    if (empty($error)) {
-        $db->update(TBL_PRODUCT, "product = '$product', price = '$price', weight = '$weight', short_description = '$short_description', description = '$description'", "entity_guid = '$id'");
-        $success = "Product updated successfully...";
+    // File upload
+    $target_dir = "../product_image/";
+    $target_file  = $target_dir . basename($_FILES["fileUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+    $check = getimagesize($_FILES["fileUpload"]["tmp_name"]);
+    if ($check == false) {
+        $error =  "File is not an image";
+        $uploadOk = 0;
+    }
+
+    if (file_exists($target_file)) {
+        $error = "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+
+    if ($_FILES["fileUpload"]["size"] > 500000) {
+        $error = "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
+
+    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+        $error = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+    }
+
+    if (empty($error) && $uploadOk == 1) {
+        $move_file = move_uploaded_file($_FILES["fileUpload"]["tmp_name"], $target_file);
+        if ($move_file) {
+            $db->update(TBL_PRODUCT, "product = '$product', price = '$price', weight = '$weight', short_description = '$short_description', product_image = '$target_file', description = '$description'", "entity_guid = '$id'");
+            unlink($current_image);
+            $success = "Product updated successfully...";
+        }
     }
 
     echo json_encode(['error' => $error, 'success' => $success]);
 }
 
-// if ($pg == ) {
-//     $error = "";
-//     $success = "";
-//     $full_name = $db->escape($_POST['full_name']);//;exit;
-//     $username = $db->escape($_POST['username']);//exit;
-//     // $ref = $db->escape($_POST['ref']);
-//     $email = $db->escape($_POST['email']);//exit;
-//     $phone_number = $db->escape($_POST['tel']);//exit;
-//     $password = $db->escape($_POST['password']);//exit;
+if ($pg == 205) {
+    $error = "";
+    $success = "";
+    $name = $db->escape($_POST['name']);
+    $email = $db->escape($_POST['email']);
+    $phone = $db->escape($_POST['phone']);
+    $message = $db->escape($_POST['comments']);
 
-//     $hash_password = password_hash($password, PASSWORD_DEFAULT);//exit;
+    if (empty($name)) {
+        $error = "Name is required!";
+    }
 
-//     if (empty($full_name)) {
-//         $error = "Full Name is required!";
-//     }
+    if (empty($email)) {
+        $error = "Email is required!";
+    }
 
-//     if (empty($username)) {
-//         $error = "Username is required!";
-//     }
+    if (empty($phone)) {
+        $error = "Phone number is required!";
+    }
 
-//     if (empty($email)) {
-//         $error = "Email is required!";
-//     }
+    if (empty($message)) {
+        $error = "Drop a message";
+    }
 
-//     if (empty($phone_number)) {
-//         $error = "Phone Number is required!";
-//     }
+    if (empty($error)) {
 
-//     if (empty($gender)) {
-//         $error = "Select a gender is required!";
-//     }
+        $result = $db->saveData(TBL_CONTACT, "name = '$name', email = '$email', phone_number = '$phone',  messages = '$message'");
 
-//     if (empty($password)) {
-//         $error = "Password is required!";
-//     }
-
-//     if (empty($address)) {
-//         $error = "Address field is required!";
-//     }
-
-//     if ($db->validateEmail($email) == false) {
-//         $error = "Invalid email address";
-//     }
-
-//     if (Investor::getAdminByUsernameOrEmail($email)) {
-//         $error = "Email already exist!";
-//     }
-
-//     if ($db->validatePhoneNumber($phone_number) == false) {
-//         $error = "Invalid phone number format";
-//     }
-
-//     if (empty($errors)) {
-//         $user_guid = $db->entityGuid();
-//         $result = $db->saveData(TBL_SYSTEM_USER, "user_guid = '$user_guid', role_id = '2', full_name = '$full_name', email = '$email', phone_number = '$phone_number', country = '$country', password = '$hash_password'");     
-//     }else{
-//         $error = "Something went wrong!";
-//     }
+        if ($result) {
+            $success ="Message Sent";
+            
+        }
+    }else{
+        $error = "Something went wrong!";
+    }
      
-//     echo json_encode([
-//         "error" => $error,
-//         "success" => $success
-//     ]);
-// }
+    echo json_encode([
+        "error" => $error,
+        "success" => $success
+    ]);
+}
+
+// Authorize user to add to cart
+if ($pg == 206) {
+    $error = "";
+    $success = "";
+    $name = $db->escape($_POST['name']);
+    $email = $db->escape($_POST['email']);
+    $phone = $db->escape($_POST['phone']);
+    $address = $db->escape($_POST['address']);
+
+    if (empty($name)) {
+        $error = "Name is required!";
+    }
+
+    if (empty($email)) {
+        $error = "Email is required!";
+    }
+
+    if (empty($phone)) {
+        $error = "Phone number is required!";
+    }
+
+    if (empty($address)) {
+        $error = "Address is required!";
+    }
+
+    if ($db->validateEmail($email) == false) {
+        $error = "Invalid email address";
+    }
+
+    if (Ajax::getUserEmail($email) > 0 && Ajax::getUserPhone($phone) > 0) {
+
+    }elseif (Ajax::getUserEmail($email) > 0 || Ajax::getUserPhone($phone) > 0) {
+        $error = "Email or Phone number already exist";
+    }elseif (empty($error)) {
+        $user_guid = $db->entityGuid();
+        $result = $db->saveData(TBL_USERS, "user_guid = '$user_guid', role_id = '2', full_name = '$name', email = '$email', phone_number = '$phone',  address = '$address'");
+
+        if ($result) {
+            
+            foreach (Ajax::getUserEmail($email) as $userInfo) {
+                $_SESSION['token'] = $userInfo['user_guid'];
+                $_SESSION['email'] = $userInfo['email'];
+                $_SESSION['role'] = $userInfo['role_id'];
+                $_SESSION['name'] = $userInfo['full_name'];
+                $db->set('login', true);
+                if ($_SESSION['role'] == 2) {
+                    header('Location: ../shop');
+                }
+            }
+            $success ="Record Saved";
+        }
+    }else{
+        $error = "Something went wrong!";
+    }
+     
+    echo json_encode([
+        "error" => $error,
+        "success" => $success
+    ]);
+}

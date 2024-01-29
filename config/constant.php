@@ -6,7 +6,7 @@ use Google\Service\CloudAsset\Resource\V1;
 
 // define("DB_HOST",             "localhost");
 // define("DB_USER",             "root");
-// define("DB_PASSWORD",         "Emmagist@1994204");
+// define("DB_PASSWORD",         "");
 // define("DB_NAME",             "in_domino_farm_1");
 
 // Online Database
@@ -30,6 +30,8 @@ define("TBL_CATEGORY",              "category");
 define("TBL_PRODUCT",               "products");
 define("TBL_USERS",                 "users");
 define("TBL_ORDER",                 "orders");
+define("TBL_CONTACT",                 "contact");
+define("TBL_CART",                 "carts");
 define("TBL_PAYMENTS_LOG",          "payments_log");
 define("TBL_TRANSACTION_LOG",       "transaction_logs");
 define("TBL_REGISTRATION_CODE",     "registration_code");
