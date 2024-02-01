@@ -75,7 +75,7 @@
                             <li class="dropdown  cartListDropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
                                     <i class="far fa-shopping-cart my-cart-icon"></i>
-                                    <span class="badge my-cart-badge">3</span>
+                                    <span class="badge my-cart-badge">0</span>
                                 </a>
                                 <ul class="dropdown-menu cart-list cartList">
                                     <li>
