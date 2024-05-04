@@ -1,5 +1,5 @@
 <footer class="footer">
-  <div class="text-muted text-center d-block">Copyright © 2023.  In Domino Farm. All rights reserved.</div>
+  <div class="text-muted text-center d-block">Copyright © 2024.  In Domino Farm. All rights reserved.</div>
 </footer>
 <!-- container-scroller -->
   <!-- plugins:js -->

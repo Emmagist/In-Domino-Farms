@@ -1,3 +1,10 @@
+<?php 
+    // require_once 'libs/users.php';
+
+    // if (isset($_SESSION['token'])) {
+    //     $token = $_SESSION['token'];
+    // }
+?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -54,8 +54,20 @@
             </a>
             <div class="collapse" id="user-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="../user/new-users">New Users</a></li>
                 <li class="nav-item"><a class="nav-link" href="../user/users">Users</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#banner-elements" aria-expanded="false" aria-controls="banner-elements">
+              <i class="icon-grid-2 menu-icon"></i>
+              <span class="menu-title">Banners</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="banner-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="../banner/add-banner">Add Banners</a></li>
+                <li class="nav-item"><a class="nav-link" href="../banner/banners">Banners</a></li>
               </ul>
             </div>
           </li>

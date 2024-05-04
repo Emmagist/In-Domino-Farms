@@ -307,9 +307,9 @@ if ($pg == 205) {
 if ($pg == 206) {
     $error = "";
     $success = "";
-    $name = $db->escape($_POST['name']);
+    $name = $db->escape($_POST['full_name']);
     $email = $db->escape($_POST['email']);
-    $phone = $db->escape($_POST['phone']);
+    $phone = $db->escape($_POST['phone_number']);
     $address = $db->escape($_POST['address']);
 
     if (empty($name)) {
@@ -332,34 +332,91 @@ if ($pg == 206) {
         $error = "Invalid email address";
     }
 
-    if (Ajax::getUserEmail($email) > 0 && Ajax::getUserPhone($phone) > 0) {
-
-    }elseif (Ajax::getUserEmail($email) > 0 || Ajax::getUserPhone($phone) > 0) {
+    if (Ajax::getUserEmail($email) > 0 || Ajax::getUserPhone($phone) > 0) {
         $error = "Email or Phone number already exist";
-    }elseif (empty($error)) {
+    }
+
+    if (empty($error)) {
         $user_guid = $db->entityGuid();
         $result = $db->saveData(TBL_USERS, "user_guid = '$user_guid', role_id = '2', full_name = '$name', email = '$email', phone_number = '$phone',  address = '$address'");
 
         if ($result) {
             
-            foreach (Ajax::getUserEmail($email) as $userInfo) {
-                $_SESSION['token'] = $userInfo['user_guid'];
-                $_SESSION['email'] = $userInfo['email'];
-                $_SESSION['role'] = $userInfo['role_id'];
-                $_SESSION['name'] = $userInfo['full_name'];
-                $db->set('login', true);
-                if ($_SESSION['role'] == 2) {
-                    header('Location: ../shop');
-                }
-            }
-            $success ="Record Saved";
+            // foreach (Ajax::getUserEmail($email) as $userInfo) {
+            //     $_SESSION['token'] = $userInfo['user_guid'];
+            //     $_SESSION['email'] = $userInfo['email'];
+            //     $_SESSION['role'] = $userInfo['role_id'];
+            //     $_SESSION['name'] = $userInfo['full_name'];
+            //     $db->set('login', true);
+            //     if ($_SESSION['role'] == 2) {
+            //         header('Location: ../shop');
+            //     }
+            // }
+            $success ="Record Saved, you will be redirected to login page";
         }
-    }else{
-        $error = "Something went wrong!";
     }
+    // else{
+    //     $error = "Something went wrong!";
+    // }
      
     echo json_encode([
         "error" => $error,
         "success" => $success
     ]);
+}
+
+//User Login
+if ($pg == 207) {
+    $errors = [];
+    $success = [];
+    echo $email = $db->escape($_POST['email']);exit;
+
+    if (empty($email)) {
+        echo json_encode([
+            "error" => "Email is required!",
+        ]);
+    }
+
+    if (Ajax::getUserEmail($email) > 0 && empty($errors)) {
+        foreach (Ajax::getUserEmail($email) as $userInfo) {
+            $_SESSION['token'] = $userInfo['user_guid'];
+            $_SESSION['email'] = $userInfo['email'];
+            $_SESSION['role'] = $userInfo['role_id'];
+            $_SESSION['name'] = $userInfo['full_name'];
+            $db->set('login', true);
+            if ($_SESSION['role'] == 2) {
+                // header('Location: ../shop');
+                echo json_encode([
+                    "success" => "Success",
+                ]);
+            }else {
+                echo json_encode([
+                    "error" => "Sorry you do not have access to the page you're requesting for!",
+                ]);
+            }
+        }
+        
+    }else {
+        echo json_encode([
+            "error" => "Email not correct!",
+        ]);
+        }
+    
+}
+
+// Add to cart
+if ($pg == 208) {
+    $id = $db->escape($_POST['product_id']);
+    $quantity = $db->escape($_POST['quantity']);
+    $user = $db->escape($_POST['user']);
+
+    foreach (Ajax::getSingleProductByToken($id) as $key) {
+        $total = $key['price'];
+    }
+
+    $result = $db->saveData(TBL_CART, "user_id = '$user', product_id = '$id', quantity = '$quantity', total_price = '$total'");
+
+    if ($result) {
+        echo json_encode('done');
+    }
 }

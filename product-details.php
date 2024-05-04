@@ -47,19 +47,20 @@
                                             <a href="#" class="item popup-gallery">
                                                 <img src="<?=$product['product_image']?$product['product_image']:'';?>" alt="Thumb">
                                             </a>
-                                            <span class="onsale theme">-16%</span>
+                                            <!-- <span class="onsale theme">-16%</span> -->
                                         </div>
                                         <div class="carousel-item product-item">
                                             <a href="assets/img/products/2.png" class="item popup-gallery">
                                                 <img src="assets/img/products/2.png" alt="Thumb">
                                             </a>
-                                            <span class="onsale theme">-25%</span>
+                                            <!-- <span class="onsale theme">-25%</span> -->
                                         </div>
                                         <div class="carousel-item product-item">
                                             <a href="assets/img/products/3.png" class="item popup-gallery">
                                                 <img src="assets/img/products/3.png" alt="Thumb">
                                             </a>
-                                            <span class="onsale theme">-33%</span>
+                                            <!-- <span class="onsale theme">-33%</span> -->
+                                            <!-- <i class="fas fa-star-half-alt"></i> -->
                                         </div>
                                         <div class="carousel-item product-item">
                                             <a href="assets/img/products/4.png" class="item popup-gallery">

@@ -47,29 +47,33 @@
                 <div class="col-xl-7 col-lg-6 about-style-one">
                     <div class="row align-center">
                         <div class="col-xl-7 col-lg-12">
-                            <h2 class="heading">Agriculture For <br> Future Development</h2>
+                            <h2 class="heading">Building an <br>Agricultural Legacy  </h2>
                             <p>
-                                There are many variations of passages of ipsum available but the majority have suffered alteration in some form by injected humor or random word which don’t look even. Comparison new ham melancholy son themselves.
+                            In Domino Farms is an agro business subsidiary of In Domino Agro-Business Limited located in the dens of Idanre Village.
                             </p>
-                            <ul class="check-solid-list mt-20">
+                            <p>Created in 2011 by our founder, a seasoned mechanical engineer with over 25 years in the oil & gas industry as his retirement passion project. He quickly grew the family business into a thriving venture with our layer farm as the principal focus.</p>
+                            <p>
+                            The core of our business being our layer farm, our raise pigs for meat, produce palm oil; rear snails fro sale and catfish for wholesale and retail buyers. The company is well on its way in positioning itself to be a leading agricultural commodity exporting company in Nigeria.
+                            </p>
+                            <!-- <ul class="check-solid-list mt-20">
                                 <li>Organic food contains more vitamins</li>
                                 <li>Eat organic because supply meets demand</li>
                                 <li>Organic food is never irradiated</li>
-                            </ul>
+                            </ul> -->
                         </div>
                         <div class="col-xl-5 col-lg-12 pl-50 pl-md-15 pl-xs-15">
                             <div class="top-product-item">
                                 <img src="assets/img/icon/1.svg" alt="Icon">
                                 <h5><a href="#">Natural Farming</a></h5>
                                 <p>
-                                    Resolve parties but trying she shewing of moment.
+                                We breed our products naturally. No Additives. No Preservatives.
                                 </p>
                             </div>
                             <div class="top-product-item">
                                 <img src="assets/img/icon/2.svg" alt="Icon">
                                 <h5><a href="#">Quality Products</a></h5>
                                 <p>
-                                    Always parties but trying she shewing of moment.
+                                Our commitment is to your health and satisfaction. We adhere to quality standards in our day-to-day relationships.
                                 </p>
                             </div>
                         </div>
@@ -82,16 +86,15 @@
 
     <!-- Start Farmer 
     ============================================= -->
-    <div class="farmer-area default-padding bottom-less bg-gray" style="background-image: url(assets/img/shape/36.png);">
+    <div class="farmer-area default-padding bottom-less bg-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="site-heading text-center">
-                        <h5 class="sub-title">Our Farmers</h5>
                         <h2 class="title">Meet Our Farm Experts</h2>
                         <div class="devider"></div>
                         <p>
-                            Everything melancholy uncommonly but solicitude inhabiting <br> projection off. Connection stimulated estimating.
+                        Discover the full potential of our farm with our <br>seasoned team of agricultural specialists. 
                         </p>
                     </div>
                 </div>
@@ -129,8 +132,8 @@
                                     </div>
                                 </div>
                                 <div class="info">
-                                    <span>Farmer of tomatoes</span>
-                                    <h4><a href="#">Aleesha Brown</a></h4>
+                                    <span>Founder & Managing Director</span>
+                                    <h4><a href="#">Adewale Tijani</a></h4>
                                 </div>
                             </div>
                         </div>
@@ -162,8 +165,8 @@
                                     </div>
                                 </div>
                                 <div class="info">
-                                    <span>Farmer of cherry</span>
-                                    <h4><a href="#">Kevin Martin</a></h4>
+                                    <span>Farm Manager</span>
+                                    <h4><a href="#">Adeola Tajudeen</a></h4>
                                 </div>
                             </div>
                         </div>
@@ -209,173 +212,9 @@
     </div>
     <!-- End Farmer -->
 
-    <!-- Start Food Order Process
-    ============================================= -->
-    <div class="process-area default-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 process-style-one">
-                    <h5 class="sub-title">Order process</h5>
-                    <h2 class="title">Order Now and <br> get pure Organic Food</h2>
-                    <div class="call-to-action mt-45">
-                        <div class="icon">
-                            <i class="fas fa-user-headset"></i>
-                        </div>
-                        <div class="info">
-                            <span>Get quick support</span>
-                            <h4><a href="tel:2151234567">+123 34598768</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-7 process-style-one">
-                    <div class="row">
-                        <div class="shape">
-                            <img src="assets/img/shape/35.webp" alt="Image Not Found">
-                        </div>
-
-                        <div class="col-lg-4">
-                            <div class="nav nav-tabs order-process-tab-navs" id="nav-tab" role="tablist">
-                                <button class="nav-link" id="nav-id-1" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">
-                                    <span>Process - 01 </span>
-                                    <strong>Home Delivary</strong>
-                                </button>
-                                <button class="nav-link active" id="nav-id-2" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">
-                                    <span>Process - 02 </span>
-                                    <strong>Live Purchase</strong>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-8">
-                            <div class="tab-content order-process-tab-content" id="nav-tabContent">
-                                <!-- Single Item -->
-                                <div class="tab-pane fade" id="tab1" role="tabpanel" aria-labelledby="nav-id-1">
-                                    <h3 class="title">Get products from home</h3>
-                                    <p>
-                                        Give lady of they such they sure it. Me contained explained  education. Vulgar as hearts by garret. Perceived is determine departure explained no forfeited he something an join.
-                                    </p>
-                                    <ul>
-                                        <li>Product will be delivered to your door</li>
-                                        <li>The product will be checked before being sent to you.</li>
-                                    </ul>
-                                </div>
-                                <!-- End Single Item -->
-        
-                                <!-- Single Item -->
-                                <div class="tab-pane fade show active" id="tab2" role="tabpanel" aria-labelledby="nav-id-2">
-                                    <div class="row align-center">
-                                        <h3 class="title">Collect food from the farm</h3>
-                                        <p>
-                                            Take join of they such they sure it. Me contained explained  education. Vulgar as hearts by garret. Perceived is determine departure explained no forfeited he something an come.
-                                        </p>
-                                        <ul>
-                                            <li>You must come for purchasing the product</li>
-                                            <li>The product quality depends on your choice</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- End Single Item -->
-        
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Food Order Process -->
-
-    <!-- Start Testimonials 
-    ============================================= -->
-    <div class="testimonials-area default-padding bg-gray" style="background-image: url(assets/img/shape/23.png);">
-        <div class="container">
-            <div class="row align-center">
-                <div class="col-lg-5">
-                    <div class="testimonial-info text-center">
-                        <h4>Testimonial</h4>
-                        <div class="thumb">
-                            <img src="assets/img/800x800.png" alt="Image Not Found">
-                            <img src="assets/img/800x800.png" alt="Image Not Found">
-                            <img src="assets/img/800x800.png" alt="Image Not Found">
-                            <img src="assets/img/800x800.png" alt="Image Not Found">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 offset-lg-1">
-                    <div class="testimonial-carousel testimonial-style-one swiper">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                            <!-- Single item -->
-                            <div class="swiper-slide">
-                                <div class="testimonial-style-two">
-                                    
-                                    <div class="item">
-                                        <div class="content">
-                                            <p>
-                                                “Targetingconsultation discover apartments. ndulgence off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now always remembering to the point.”
-                                            </p>
-                                        </div>
-                                        <div class="provider">
-                                            <div class="info">
-                                                <h4>Matthew J. Wyman</h4>
-                                                <span>Senior Consultant</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single item -->
-                            <!-- Single item -->
-                            <div class="swiper-slide">
-                                <div class="testimonial-style-two">
-                                    <div class="item">
-                                        <div class="content">
-                                            <p>
-                                                “Consultation discover apartments. ndulgence off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now always remembering to the point.”
-                                            </p>
-                                        </div>
-                                        <div class="provider">
-                                            <div class="info">
-                                                <h4>Anthom Bu Spar</h4>
-                                                <span>Marketing Manager</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single item -->
-                            <!-- Single item -->
-                            <div class="swiper-slide">
-                                <div class="testimonial-style-two">
-                                    <div class="item">
-                                        <div class="content">
-                                            <p>
-                                                “Business discover apartments. ndulgence off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now always remembering to the point.”
-                                            </p>
-                                        </div>
-                                        <div class="provider">
-                                            <div class="info">
-                                                <h4>Metho k. Partho</h4>
-                                                <span>Senior Developer</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single item -->
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Testimonials -->
-
     <!-- Start Why Choose Us 
     ============================================= -->
-    <div class="choose-us-style-one-area overflow-hidden default-padding">
+    <!-- <div class="choose-us-style-one-area overflow-hidden default-padding">
         <div class="container">
             <div class="row align-center">
                 <div class="col-lg-6 choose-us-style-one">
@@ -448,7 +287,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Why Choose us -->
 
 <?php require "include/footer.php";

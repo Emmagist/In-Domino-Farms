@@ -40,8 +40,8 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index"><img src="images/logo-png.png" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index"><img src="images/logo-png.png" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="dashboard"><img src="images/logo-png.png" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="dashboard"><img src="images/logo-png.png" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -65,7 +65,7 @@
               <i class="icon-bell mx-0"></i>
               <span class="count"></span>
             </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+            <!-- <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
               <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
@@ -106,7 +106,7 @@
                   </p>
                 </div>
               </a>
-            </div>
+            </div> -->
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
@@ -155,7 +155,7 @@
           </div>
         </div>
       </div>
-      <div id="right-sidebar" class="settings-panel">
+      <!-- <div id="right-sidebar" class="settings-panel">
         <i class="settings-close ti-close"></i>
         <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
           <li class="nav-item">
@@ -242,7 +242,6 @@
               <p class="text-gray mb-0 ">Call Sarah Graves</p>
             </div>
           </div>
-          <!-- To do section tab ends -->
           <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
             <div class="d-flex align-items-center justify-content-between border-bottom">
               <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
@@ -302,9 +301,8 @@
               </li>
             </ul>
           </div>
-          <!-- chat tab ends -->
         </div>
-      </div>
+      </div> -->
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -379,7 +377,7 @@
                   <!-- <h6 class="font-weight-normal mb-0">All systems are running smoothly! You have <span class="text-primary">3 unread alerts!</span></h6> -->
                 </div>
                 <div class="col-12 col-xl-4">
-                 <div class="justify-content-end d-flex">
+                 <!-- <div class="justify-content-end d-flex">
                   <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
                     <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                      <i class="mdi mdi-calendar"></i> Today (10 Jan 2021)
@@ -391,7 +389,7 @@
                       <a class="dropdown-item" href="#">August - November</a>
                     </div>
                   </div>
-                 </div>
+                 </div> -->
                 </div>
               </div>
             </div>
@@ -504,12 +502,12 @@
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
-          <div class="text-muted text-center d-block">Copyright © 2023.  In Domino Farm. All rights reserved.</div>
+          <div class="text-muted text-center d-block">Copyright © 2024.  In Domino Farm. All rights reserved.</div>
         </footer>
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
-    </div>
+    </div> -->
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->

@@ -10,13 +10,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <h1>Contact Agrul</h1>
-                    <nav aria-label="breadcrumb">
+                    <h1>Contact Us</h1>
+                    <!-- <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
                             <li class="active">Contact Us</li>
                         </ol>
-                    </nav>
+                    </nav> -->
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <button type="submit">
-                                        <i class="fa fa-paper-plane"></i> Get in Touch
+                                        <i class="fa fa-paper-plane"></i> Send Message
                                     </button>
                                 </div>
                             </div>
@@ -100,8 +100,9 @@
                                     <i class="fas fa-phone-alt"></i>
                                 </div>
                                 <div class="content">
-                                    <h5 class="title">Hotline</h5>
-                                    <a href="">+4733378901</a>
+                                    <h5 class="title">Call or WhatsApp</h5>
+                                    <a href=""> +234 
+(0)816 350 2891</a>
                                 </div>
                             </li>
                             <li class="wow fadeInUp" data-wow-delay="300ms">
@@ -111,7 +112,7 @@
                                 <div class="info">
                                     <h5 class="title">Our Location</h5>
                                     <p>
-                                        55 Main Street, The Grand Avenue 2nd Block, <br> New York City
+                                    Idanre Village, Kilometer 46, Sagamu-Benin Express Way, Ijebu Imusin, Ogun State.
                                     </p>
                                 </div>
                             </li>
@@ -121,10 +122,23 @@
                                 </div>
                                 <div class="info">
                                     <h5 class="title">Official Email</h5>
-                                    <a href="mailto:info@agrul.com.com">info@agrul.com</a>
+                                    <a href="info@indominofarms.com">info@indominofarms.com</a>
                                 </div>
                             </li>
                         </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container" style="margin-top:80px">
+            <div class="row align-center">
+
+                <div class="col-tact-stye-one col-lg-12 pl-60 pl-md-15 pl-xs-15">
+                    <div class="contact-style-one-info">
+                        <h5>
+                        For enquiries about distribution, please email: nola@indominofarms.com
+                        </h5>
                     </div>
                 </div>
 

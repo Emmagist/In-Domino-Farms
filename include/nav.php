@@ -72,10 +72,10 @@
                     <!-- Start Atribute Navigation -->
                     <div class="attr-nav">
                         <ul>
-                            <li class="dropdown  cartListDropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+                            <li class="dropdown  cartListDropdown shop-badge">
+                                <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
                                     <i class="far fa-shopping-cart my-cart-icon"></i>
-                                    <span class="badge my-cart-badge">0</span>
+                                    <span class="badge  my-cart-badge">0</span>
                                 </a>
                                 <ul class="dropdown-menu cart-list cartList">
                                     <li>
@@ -111,9 +111,9 @@
                                         <a href="#" class="btn btn-default btn-cart">Cart</a>
                                         <a href="#" class="btn btn-default btn-cart">Checkout</a>
                                     </li>
-                                </ul>
+                                </ul> -->
                             </li>
-                            <li class="search"><a href="#"><i class="far fa-search"></i></a></li>
+                            <!-- <li class="search"><a href="#"><i class="far fa-search"></i></a></li> -->
                             <li class="side-menu">
                                 <a href="#">
                                     <span class="bar-1"></span>
@@ -130,11 +130,11 @@
                         <a href="#" class="close-side"><i class="icon_close"></i></a>
                         <div class="widget">
                             <div class="logo">
-                                <img src="assets/img/logo-light.png" alt="Logo">
+                                <img src="" alt="">
                             </div>
-                            <p>
+                            <!-- <p>
                                 Arrived compass prepare an on as. Reasonable particular on my it in sympathize. Size now easy eat hand how. Unwilling he departure elsewhere dejection at. Heart large seems may purse means few blind.
-                            </p>
+                            </p> -->
                         </div>
                         <div class="widget address">
                             <div>
@@ -142,21 +142,23 @@
                                     <li>
                                         <div class="content">
                                             <p>Address</p> 
-                                            <strong>California, TX 70240</strong>
+                                            <strong>
+                                                Idanre Village, Kilometer 46, Sagamu-Benin Express Way, Ijebu Imusin, Ogun State.
+                                            </strong>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="content">
                                             <p>Email</p> 
-                                            <strong>support@validtheme.com</strong>
+                                            <strong>info@indominofarms.com</strong>
                                         </div>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <div class="content">
                                             <p>Contact</p> 
                                             <strong>+44-20-7328-4499</strong>
                                         </div>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                         </div>

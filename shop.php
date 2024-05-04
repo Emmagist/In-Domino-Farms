@@ -1,5 +1,8 @@
 <?php
-
+    require_once "libs/users.php";
+    if (isset($_SESSION['token'])) {
+        $token = $_SESSION['token'];
+    }
     require "include/head.php";
     require "include/nav.php";
 
@@ -44,20 +47,18 @@
                     </div>
 
                     <div class="col-lg-5 text-right">
-                        <p>
-                            Showing 1–10 of 47 results
+                        <p id="product-result">
+                             47 results
                         </p>
                         <select name="cars" id="cars">
-                            <option value="volvo">Short by latest</option>
-                            <option value="saab">Short by Recent</option>
-                            <option value="mercedes">Short by Popular</option>
-                            <option value="audi">Short by Relevant</option>
+                            <option value="volvo">Sort by latest</option>
+                            <!-- <option value="mercedes">Sort by old</option> -->
                           </select>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12" id="div-content">
                     <!-- Start Tab Content -->
                     <div class="tab-content tab-content-info text-center" id="shop-tabContent">
 
@@ -118,16 +119,16 @@
 
                     
 
-                    <!-- Pgination -->
-                    <nav class="woocommerce-pagination">
+                   
+                    <!-- <nav class="woocommerce-pagination">
                         <ul class="page-numbers">
-                            <li><a class="previous page-numbers" href="#"><i class="fas fa-angle-left"></i></a></li>
+                            <li><span class="previous page-numbers" href="#"><i class="fas fa-angle-left"></i></span></li>
 
-                            <li><span aria-current="page" class="page-numbers current">1</span></li>
-                            <li><a class="page-numbers" href="#">2</a></li>
-                            <li><a class="next page-numbers" href="#"><i class="fas fa-angle-right"></i></a></li>
+                            <li><span aria-current="page" id="page-numbers" class="page-numbers current" data-id="1" onclick="pagination()">1</span></li>
+                            <li><span class="page-numbers" href="#">2</span></li>
+                            <li><span class="next page-numbers" href="#"><i class="fas fa-angle-right"></i></span></li>
                         </ul>
-                    </nav>
+                    </nav> -->
                 </div>
             </div>
         </div>
@@ -138,20 +139,70 @@
 
 <script>
     $( document ).ready(function() {
-      $.ajax({
-          url: 'libs/ajaxGet.php?get=210',
-          method: 'GET',
-          dataType: 'json',
-          data: 200,
-          contentType: false,
-          processData: false,
-          // cache: false,
-          success: (param) => { 
-              if (param) {
-                  $('.vt-products').html(param);
-              }
-          },
-      });
-      return false;
+        $.ajax({
+            url: 'libs/ajaxGet.php?get=213',
+           method: 'GET',
+           dataType: 'json',
+           data: 213,
+           contentType: false,
+           processData: false,
+           // cache: false,
+           success: (param) => { 
+               if (param) {
+                   $('#product-result').html(param);
+               }
+           },
+        });
+        
+        return false;
     });
+
+    function fetch_shop(page) {
+        if (page > 0) {
+            $.ajax({
+            url: 'libs/ajaxGet.php?get=210&page='+page,
+            method: 'GET',
+            dataType: 'json',
+            data: 210,
+            contentType: false,
+            processData: false,
+            // cache: false,
+            success: (param) => { 
+                if (param) {
+                    $('#div-content').html(param);
+                }
+            },
+        });
+        }else {
+            page = 1;
+            $.ajax({
+                url: 'libs/ajaxGet.php?get=210&page='+page,
+                method: 'GET',
+                dataType: 'json',
+                data: 210,
+                contentType: false,
+                processData: false,
+                // cache: false,
+                success: (param) => { 
+                    if (param) {
+                        $('#div-content').html(param);
+                    }
+                },
+            });
+        }
+        
+        
+        return false;
+    };
+
+    fetch_shop();
+
+    function pagination(){
+        const page = $('#page-numbers').attr('data-id');
+        fetch_shop(page)
+    }
+
+    function checkLogin() {
+        location.href = "login";
+    }
 </script>

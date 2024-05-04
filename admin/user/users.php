@@ -63,7 +63,7 @@
 
 // Edit function
 function viewUserButton(id) {
-  $('#staticBackdrop').modal('show');
+  $('#viewUserModal').modal('show');
 
   $.ajax({
     url: '../../libs/ajaxGet.php?get=203&viewUser='+id,

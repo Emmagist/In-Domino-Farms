@@ -21,13 +21,14 @@
                   <tr>
                     <th>S/N</th>
                     <th>Order Number</th>
+                    <th>Buyer</th>
                     <th>Product Name</th>
                     <th>Product Image</th>
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Total Price</th>
                     <th>Ordered Date</th>
-                    <th>Status</th>
+                    <!-- <th>Status</th> -->
                   </tr>
                 </thead>
                 <tbody class="orderList"></tbody>
@@ -65,7 +66,7 @@
 
 // Edit function
 function viewUserButton(id) {
-  $('#staticBackdrop').modal('show');
+  $('#viewUserModal').modal('show'); 
 
   $.ajax({
     url: '../../libs/ajaxGet.php?get=203&viewUser='+id,
