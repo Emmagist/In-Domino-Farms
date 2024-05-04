@@ -22,7 +22,7 @@
                         <div class="form-group mt-4">
                             <button type="submit" name="userLogin" class="form-control btn btn-primary">Login</button>
                         </div>
-                        <p class="text-left mt-4">Not registered <a href="signup">Signup</a></p>
+                        <p class="text-left mt-4">Not registered? <a href="signup">Signup</a></p>
                     </form>
                 </div>
             </div>
