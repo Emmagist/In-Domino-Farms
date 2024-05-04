@@ -22,7 +22,7 @@ define("EMAIL_PASSWORD",      "LKM]1U?.8Jyi");
 
 // Gateway
 // PayStack
-define("PAY_KEY",   "pk_test_bb33cfc81b9733dbd604a677940d8cf608aaab27");
+define("PAY_KEY",   "pk_test_eecb533ad284c28fa15e744d4d91d08585069115");
 
 // Tables
 define("TBL_ADMIN",                 "admins");
