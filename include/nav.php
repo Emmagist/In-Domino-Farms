@@ -13,7 +13,7 @@
     ============================================= -->
     <header>
         <!-- Start Navigation -->
-        <nav class="navbar mobile-sidenav inc-shape navbar-common navbar-sticky navbar-default validnavs">
+        <nav class="navbar mobile-sidenav navbar-common navbar-sticky navbar-default validnavs">
 
             <!-- Start Top Search -->
             <div class="top-search">
